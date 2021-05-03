@@ -1,4 +1,5 @@
 import * as PIXI from "pixi.js";
+import * as Tone from "tone";
 
 import { Nature } from "./components/Nature";
 import { Eye } from "./components/Eye";
@@ -48,6 +49,30 @@ new Nature(nature);
 
 stage.filters = [];
 
+let isFirst = true;
+
+const reverb = new Tone.Reverb().toDestination();
+
+const player = new Tone.Player({
+    url: "assets/ambient.mp3",
+    loop: true,
+    volume: 6,
+    fadeIn: 4,
+    reverse: true,
+}).connect(reverb);
+
+const playerLight = new Tone.Player({
+    url: "assets/light1.mp3",
+    volume: 10,
+}).connect(reverb);
+
 document.addEventListener("click", (e) => {
-    new Light(nature, e.clientX);
+    if (isFirst) {
+        isFirst = false;
+
+        Tone.loaded().then(() => {
+            player.start();
+        });
+    }
+    new Light(nature, e.clientX, playerLight);
 });

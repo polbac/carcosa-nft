@@ -3,8 +3,9 @@ import * as PIXI from "pixi.js";
 export class Light {
     private stage: PIXI.Container;
     private lightSprite: PIXI.Sprite;
+    private playerLight: any;
 
-    constructor(stage: PIXI.Container, x: number) {
+    constructor(stage: PIXI.Container, x: number, playerLight: any) {
         this.stage = stage;
         this.lightSprite = new PIXI.Sprite();
         const rectGraph: PIXI.Graphics = new PIXI.Graphics();
@@ -14,6 +15,8 @@ export class Light {
         this.lightSprite.addChild(rectGraph);
 
         this.createLight({ x });
+
+        playerLight.start();
 
         setTimeout(() => {
             this.stage.removeChild(this.lightSprite);
@@ -39,7 +42,7 @@ export class Light {
         let i = 0;
 
         const lineStyle = lineGraph.lineStyle(1, 0xffffff).moveTo(_x, _y);
-        const minHeight = window.innerHeight / 1.5;
+        const minHeight = window.innerHeight / 3;
         while (_y < window.innerHeight) {
             _x += Math.sin(i) * 20 + direction;
             _y += i * Math.random() * 10 + direction;
@@ -47,7 +50,7 @@ export class Light {
 
             i += Math.random() * 5;
 
-            if (Math.random() > 0.85 && _y > minHeight) {
+            if (Math.random() > 0.89 && _y > minHeight) {
                 let direction = 0;
                 if (_x > x) {
                     direction = 10 + Math.random() * 10;
