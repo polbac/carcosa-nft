@@ -903,7 +903,7 @@
     "@babel/helper-validator-option" "^7.12.17"
     "@babel/plugin-transform-typescript" "^7.13.0"
 
-"@babel/runtime@^7.13.17", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.13.17", "@babel/runtime@^7.14.0", "@babel/runtime@^7.8.4":
   version "7.14.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
   integrity sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==
@@ -1277,6 +1277,11 @@
   dependencies:
     "@pixi/core" "6.0.2"
 
+"@pixi/filter-crt@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-crt/-/filter-crt-4.0.0.tgz#f7cfeb37a75e7087fd5a7cf0c895fd520613bc15"
+  integrity sha512-Fa1yW3VIWXoDTAJRGIeRvRKBbgEQ+eBxN1oPTxmDIwyo9I67q4EueENqb9VJ+0eflhKaPzEl+5oGXmT90aI7xw==
+
 "@pixi/filter-displacement@6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@pixi/filter-displacement/-/filter-displacement-6.0.2.tgz#0c6096fb951015b8446cebf8ce4b02a57700c458"
@@ -1298,6 +1303,11 @@
   integrity sha512-UnaRYV06qWe7ytBHZ8hK6ZH8Bnqhwtuhoj86pAv0Jhc8EXwcKC2wLT7JDFxBnjB1GwJuWDYnNrQpPsyRQsHNiA==
   dependencies:
     "@pixi/core" "6.0.2"
+
+"@pixi/filter-rgb-split@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-rgb-split/-/filter-rgb-split-4.0.0.tgz#d6c0752e4a84dc1f86724334354e87ed7c76c3e6"
+  integrity sha512-jRMgjZ3knweg0873hpmgv6BmofD7hws7BS8fmQGRSZXNJ+CZjhmKVwpADG8YcZZvNEYZhGatQh88CxYG9dTs9w==
 
 "@pixi/graphics@6.0.2":
   version "6.0.2"
@@ -2284,6 +2294,14 @@ atob@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+
+automation-events@^3.0.13:
+  version "3.0.13"
+  resolved "https://registry.yarnpkg.com/automation-events/-/automation-events-3.0.13.tgz#d389d3d1d4db54f9ca574bbdb700b28c9890e562"
+  integrity sha512-9V51BbdJiwMEeN8efkCwcMEWP+X7w7+TcJPqiugYLhw6wrYvd5QXQO2Py0xbXW0lZDEUhrWKZbkeCz0yOHbyyQ==
+  dependencies:
+    "@babel/runtime" "^7.14.0"
+    tslib "^2.2.0"
 
 aws-sign2@~0.7.0:
   version "0.7.0"
@@ -7929,6 +7947,15 @@ stack-utils@^2.0.2:
   dependencies:
     escape-string-regexp "^2.0.0"
 
+standardized-audio-context@^25.1.8:
+  version "25.1.17"
+  resolved "https://registry.yarnpkg.com/standardized-audio-context/-/standardized-audio-context-25.1.17.tgz#c42d9040623b324ad87678dd44ee3dc195466ce4"
+  integrity sha512-KZwU9OfgMkzy1XYPmiFNfdWVx3yTuvEjA4ByYWWIowzmU6asgQrK2ThyW//muk8Q7dADF20BROQGO17VQAzWdQ==
+  dependencies:
+    "@babel/runtime" "^7.14.0"
+    automation-events "^3.0.13"
+    tslib "^2.2.0"
+
 static-extend@^0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/static-extend/-/static-extend-0.1.2.tgz#60809c39cbff55337226fd5e0b520f341f1fb5c6"
@@ -8239,6 +8266,14 @@ toidentifier@1.0.0:
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
 
+tone@^14.7.77:
+  version "14.7.77"
+  resolved "https://registry.yarnpkg.com/tone/-/tone-14.7.77.tgz#12a2a9f033952ccdb552275a6384ca5d36d4b5ed"
+  integrity sha512-tCfK73IkLHyzoKUvGq47gyDyxiKLFvKiVCOobynGgBB9Dl0NkxTM2p+eRJXyCYrjJwy9Y0XCMqD3uOYsYt2Fdg==
+  dependencies:
+    standardized-audio-context "^25.1.8"
+    tslib "^2.0.1"
+
 tough-cookie@^2.3.3, tough-cookie@~2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.5.0.tgz#cd9fb2a0aa1d5a12b473bd9fb96fa3dcff65ade2"
@@ -8316,7 +8351,7 @@ tslib@^1.8.1:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.3:
+tslib@^2.0.1, tslib@^2.0.3, tslib@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==

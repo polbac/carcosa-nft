@@ -28,7 +28,8 @@ export class Nature {
             const negativeX = Math.random() > 0.5;
             const x = negativeX ? -400 - Math.random() * 100 : 400 + Math.random() * 100;
             const y = 100 + Math.random() * 300;
-            const branch = new Branch(this.stage, size, x, y, 0, 0);
+            const angle = negativeX ? Math.random() * 10 : Math.random() * -10;
+            const branch = new Branch(this.stage, size, x, y, angle, 0);
             branch.setZ(10 * Math.random() * 10);
             this.poolBranches.push(branch);
         }

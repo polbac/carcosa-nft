@@ -37,7 +37,7 @@ export class Branch {
 
         const lineGraph: PIXI.Graphics = new PIXI.Graphics();
 
-        lineGraph.lineStyle(2 - this.delay, 0xcccccc).lineTo(0, this.size);
+        lineGraph.lineStyle(2 - this.delay, 0x2a0fed).lineTo(0, this.size);
 
         this.lineSprite.x = this.lineSprite.width / 2;
         this.lineSprite.addChild(lineGraph);
@@ -79,7 +79,7 @@ export class Branch {
     public setZ(z: number) {
         this.z = z;
         this.render2DPosition();
-        if (this.z < -70) {
+        if (this.z < -80) {
             gsap.killTweensOf(this.lineSprite);
             this.stage.removeChild(this.lineSprite);
             this.z = 40;
