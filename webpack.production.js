@@ -21,10 +21,10 @@ module.exports = (env) => {
                     exclude: /node_modules/,
                     loader: "eslint-loader",
                     options: {
-                        emitError: true,
-                        emitWarning: true,
-                        failOnError: true,
-                        failOnWarning: true,
+                        emitError: false,
+                        emitWarning: false,
+                        failOnError: false,
+                        failOnWarning: false,
                     },
                 },
                 {

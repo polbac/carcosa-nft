@@ -37,7 +37,9 @@ module.exports = (env) => {
         },
 
         plugins: [
-            new HtmlWebpackPlugin(),
+            new HtmlWebpackPlugin({
+                title: "CARCOSA",
+            }),
             new CopyPlugin({
                 patterns: [
                     {

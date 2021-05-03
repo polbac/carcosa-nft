@@ -63,7 +63,7 @@ const player = new Tone.Player({
 
 const playerLight = new Tone.Player({
     url: "assets/light1.mp3",
-    volume: 10,
+    volume: 7,
 }).connect(reverb);
 
 document.addEventListener("click", (e) => {
