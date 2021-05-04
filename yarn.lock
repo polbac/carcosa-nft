@@ -1304,10 +1304,10 @@
   dependencies:
     "@pixi/core" "6.0.2"
 
-"@pixi/filter-rgb-split@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@pixi/filter-rgb-split/-/filter-rgb-split-4.0.0.tgz#d6c0752e4a84dc1f86724334354e87ed7c76c3e6"
-  integrity sha512-jRMgjZ3knweg0873hpmgv6BmofD7hws7BS8fmQGRSZXNJ+CZjhmKVwpADG8YcZZvNEYZhGatQh88CxYG9dTs9w==
+"@pixi/filter-rgb-split@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-rgb-split/-/filter-rgb-split-4.1.0.tgz#a809348b5d6e06450ceae068208b34425c5b551c"
+  integrity sha512-IghWsOcMVHDfBrtemtkOGlFNOrg1dO7IWAA5YRm8wm3/9ZWRcxuEhzjxDSpOdp7E2qknAhLzzgUYOSeT8EGWWg==
 
 "@pixi/graphics@6.0.2":
   version "6.0.2"
