@@ -38,7 +38,7 @@ export class Eye {
 
             this.eyeGraph
                 .beginFill(0x000000, 1)
-                .drawCircle(this.SIZE_WIDTH / 2 - (window.innerWidth / 2 - e.clientX) / 50, 0, 10);
+                .drawCircle(this.SIZE_WIDTH / 2 - ((window as any).canvasWidth / 2 - e.clientX) / 50, 0, 10);
         });
 
         const t = new TimelineLite({ repeat: -1 });

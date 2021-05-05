@@ -7,13 +7,9 @@ import { Light } from "./components/Light";
 
 import "./style.css";
 
-const gameWidth = 800;
-const gameHeight = 600;
-
 const app = new PIXI.Application({
     backgroundColor: 0x000000,
-    width: gameWidth,
-    height: gameHeight,
+    resizeTo: window,
 });
 
 const stage = app.stage;
@@ -27,14 +23,21 @@ window.onload = async (): Promise<void> => {
     resizeCanvas();
 };
 
+(window as any).canvasWidth = window.innerWidth;
+(window as any).canvasHeight = window.innerHeight;
+
 function resizeCanvas(): void {
     const resize = () => {
-        app.renderer.resize(window.innerWidth, window.innerHeight);
-        eye1.getSprite().x = window.innerWidth / 2 - 100;
-        eye2.getSprite().x = window.innerWidth / 2 + 50;
+        (window as any).canvasWidth = window.innerWidth;
+        (window as any).canvasHeight = window.innerHeight;
 
-        eye1.getSprite().y = window.innerHeight / 2;
-        eye2.getSprite().y = window.innerHeight / 2;
+        eye1.getSprite().x = window.innerWidth / 2 - 75 / 2 - 95;
+        eye2.getSprite().x = window.innerWidth / 2 - 75 / 2 + 95;
+
+        eye1.getSprite().y = window.innerHeight / 2 - 25 / 2;
+        eye2.getSprite().y = window.innerHeight / 2 - 25 / 2;
+
+        app.renderer.resize(window.innerWidth, window.innerHeight);
     };
 
     resize();
@@ -66,13 +69,46 @@ const playerLight = new Tone.Player({
     volume: 7,
 }).connect(reverb);
 
-document.addEventListener("click", (e) => {
+document.addEventListener("click", light);
+document.addEventListener("touchstart", light);
+
+let lightObject;
+
+function light(e) {
+    let x;
+
+    if (e.touches) {
+        x = e.touches[0].clientX;
+    }
+
+    if (e.clientX) {
+        x = e.clientX;
+    }
+
     if (isFirst) {
         isFirst = false;
 
         Tone.loaded().then(() => {
             player.start();
+
+            lightObject = new Light(nature, x, playerLight);
+            setTimeout(() => {
+                lightObject = null;
+            }, 350);
         });
+    } else {
+        if (!lightObject) {
+            lightObject = new Light(nature, x, playerLight);
+            setTimeout(() => {
+                lightObject = null;
+            }, 350);
+        }
     }
-    new Light(nature, e.clientX, playerLight);
-});
+}
+
+function doLight() {
+    light({ clientX: Math.random() * window.innerWidth });
+    setTimeout(doLight, 2000 * Math.random());
+}
+
+doLight();

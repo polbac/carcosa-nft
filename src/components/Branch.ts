@@ -90,8 +90,8 @@ export class Branch {
 
     private render2DPosition() {
         const scale = this.FOV / (this.FOV + this.z);
-        const x2d = this.x * scale + window.innerWidth / 2;
-        const y2d = this.y * scale + window.innerHeight / 2;
+        const x2d = this.x * scale + (window as any).canvasWidth / 2;
+        const y2d = this.y * scale + (window as any).canvasHeight / 2;
 
         this.lineSprite.scale.set(scale);
         this.lineSprite.x = x2d;

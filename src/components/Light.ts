@@ -10,13 +10,14 @@ export class Light {
         this.lightSprite = new PIXI.Sprite();
         const rectGraph: PIXI.Graphics = new PIXI.Graphics();
         rectGraph.beginFill(0x000000, 0.4);
-        rectGraph.drawRect(0, 0, window.innerWidth, window.innerHeight);
+        rectGraph.drawRect(0, 0, (window as any).canvasWidth, (window as any).canvasHeight);
         this.stage.addChild(this.lightSprite);
         this.lightSprite.addChild(rectGraph);
 
         this.createLight({ x });
-
-        playerLight.start();
+        try {
+            playerLight.start();
+        } catch (err) {}
 
         setTimeout(() => {
             this.stage.removeChild(this.lightSprite);
@@ -42,8 +43,9 @@ export class Light {
         let i = 0;
 
         const lineStyle = lineGraph.lineStyle(1, 0xffffff).moveTo(_x, _y);
-        const minHeight = window.innerHeight / 3;
-        while (_y < window.innerHeight) {
+        const minHeight = (window as any).canvasHeight / 3;
+        const canvasHeight = (window as any).canvasHeight;
+        while (_y < canvasHeight) {
             _x += Math.sin(i) * 20 + direction;
             _y += i * Math.random() * 10 + direction;
             lineStyle.lineTo(_x, _y);
