@@ -1277,10 +1277,10 @@
   dependencies:
     "@pixi/core" "6.0.2"
 
-"@pixi/filter-crt@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@pixi/filter-crt/-/filter-crt-4.0.0.tgz#f7cfeb37a75e7087fd5a7cf0c895fd520613bc15"
-  integrity sha512-Fa1yW3VIWXoDTAJRGIeRvRKBbgEQ+eBxN1oPTxmDIwyo9I67q4EueENqb9VJ+0eflhKaPzEl+5oGXmT90aI7xw==
+"@pixi/filter-crt@^4.1.3":
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/@pixi/filter-crt/-/filter-crt-4.1.3.tgz#17cf7ed4c89be8de7c3486e6aa3c219713b3066d"
+  integrity sha512-LQPbMj9pQgJnfjwHUQOprn1Yt+m0gMg4R+1a2qpW/8DvEw/jx5byO4t+hIXrhauiOhS1JzHXg2bWaVzkjLLzGw==
 
 "@pixi/filter-displacement@6.0.2":
   version "6.0.2"
