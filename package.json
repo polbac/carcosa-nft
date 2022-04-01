@@ -23,7 +23,7 @@
         "@pixi/filter-crt": "^4.0.0",
         "@pixi/filter-rgb-split": "^4.0.0",
         "core-js": "^3.11.1",
-        "gsap": "^3.6.1",
+        "gsap": "^3.10.2",
         "pixi.js": "^6.0.2",
         "tone": "^14.7.77"
     },
